@@ -1,9 +1,7 @@
-Here is a `README.md` documentation for your Java solution:
-
 ````markdown
-# Java Swing Input and Message Example
+# Java Scanner Example
 
-This project demonstrates a simple Java program using Swing's `JOptionPane` to interact with the user through dialog boxes. The program prompts the user to enter their name and age, then displays the provided information in message dialogs.
+This project demonstrates a simple Java program using the `Scanner` class to parse a string containing multiple pieces of data (first name, last name, and age) and print each piece individually.
 
 ## Prerequisites
 
@@ -18,21 +16,26 @@ Follow these steps to compile and run the Java program:
 Create a file named `Main.java` and paste the following code:
 
 ```java
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Prompt the user to enter their name
-        String name = JOptionPane.showInputDialog("What is your name?");
+        // Data string containing first name, last name, and age
+        String data = "Elijah Afriyie 28";
+        Scanner scanner = new Scanner(data);
 
-        // Display a message with the user's name
-        JOptionPane.showMessageDialog(null, "Hello, " + name + "!");
+        // Parsing the data string
+        String firstName = scanner.next();
+        String lastName = scanner.next();
+        int age = scanner.nextInt();
 
-        // Prompt the user to enter their age
-        int age = Integer.parseInt(JOptionPane.showInputDialog("How old are you?"));
+        // Printing the parsed data
+        System.out.println(firstName);
+        System.out.println(lastName);
+        System.out.println(age);
 
-        // Display a message with the user's age
-        JOptionPane.showMessageDialog(null, "You are " + age + " years old.");
+        // Closing the scanner
+        scanner.close();
     }
 }
 ```
@@ -54,20 +57,24 @@ After compiling, run the program with the following command:
 java Main
 ```
 
-### 4. Interact with the Program
+### 4. Output
 
-- A dialog box will appear asking for your name. Enter your name and click "OK".
-- Another dialog box will appear greeting you with your name. Click "OK".
-- A dialog box will appear asking for your age. Enter your age and click "OK".
-- Finally, a dialog box will appear displaying your age. Click "OK" to close the program.
+The program will output the following:
+
+```
+Elijah
+Afriyie
+28
+```
 
 ## How It Works
 
-- `JOptionPane.showInputDialog` displays a dialog box that prompts the user for input. It returns the input as a `String`.
-- `JOptionPane.showMessageDialog` displays a dialog box with a message.
-- `Integer.parseInt` converts the input string to an integer.
+- The `Scanner` class is used to parse a string containing multiple pieces of data.
+- `scanner.next()` reads the next token from the data string and returns it as a `String`.
+- `scanner.nextInt()` reads the next token as an `int`.
+- The parsed data (first name, last name, and age) are printed to the console.
 
 ## Notes
 
 - Ensure that your environment is correctly set up for running Java applications.
-- If any exceptions are encountered (such as `NumberFormatException` when entering the age), ensure that valid inputs are provided.
+- The `scanner.close()` method is called to close the `Scanner` object and release any resources associated with it.

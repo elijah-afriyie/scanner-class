@@ -1,1 +1,1 @@
-How can you use `JOptionPane` to get user input and display messages in a graphical interface in Java?
+How can you use the `Scanner` class in Java to parse a string containing multiple pieces of data, such as a name and age, and then print each piece of data individually?
