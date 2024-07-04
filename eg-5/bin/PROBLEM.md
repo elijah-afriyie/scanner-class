@@ -1,0 +1,1 @@
+How can you use nested loops and the `Scanner` class in Java to create a grid of a specified number of rows and columns using a user-provided symbol?
