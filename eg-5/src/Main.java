@@ -5,14 +5,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int rows;
         int columns;
-        String symbol = "";
+        char symbol;
 
         System.out.println("Enter # of rows: ");
         rows = input.nextInt();
         System.out.println("Enter # of columns: ");
         columns = input.nextInt();
         System.out.println("Enter symbol to use: ");
-        symbol = input.next();
+        symbol = input.next().charAt(0);
 
         for (int i = 1; i < rows; i++) {
             System.out.println();
